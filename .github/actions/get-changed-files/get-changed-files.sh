@@ -42,7 +42,7 @@ create_rename_pairs() {
   local pairs=()
 
   IFS=$'\n'
-  for i in $(seq 1 $(echo "$old_files" | wc -l)); do
+  for i in $(seq 1 "$(echo "$old_files" | wc -l)"); do
     OLD=$(echo "$old_files" | sed -n "${i}p")
     NEW=$(echo "$new_files" | sed -n "${i}p")
     pairs+=("$OLD=>$NEW")
